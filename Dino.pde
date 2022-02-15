@@ -1,6 +1,6 @@
 public class Dino {
   private PVector pos, vel, size;
-  private int hp, speed, jumpSpeed;
+  private int hp, speed, jumpSpeed, score;
   private final float gravity = 0.2;
   private boolean inAir = false;
   
@@ -11,6 +11,7 @@ public class Dino {
   vel = new PVector(0,0);
   jumpSpeed = -8;
   hp = 3;
+  score = 0;
   size = new PVector(30,50);
 }
 
@@ -38,4 +39,30 @@ public void jump() {
 vel.y += jumpSpeed;
   }
 }
+
+public boolean dinoVsCactus(Cactus c) {
+    if (this.pos.x + this.size.x >= c.pos.x &&
+      this.pos.x <= c.pos.x + c.size.x &&
+      this.pos.y + this.size.y >= c.pos.y &&
+      this.pos.y <= c.pos.y + c.size.y
+    ) {
+      System.out.println("hit");
+      text("You Lose!",width/2, height/2);
+      return true;      
+    }
+    else {
+      return false;      
+    }    
+  }
+  
+  public int updateScore(Cactus[] cactuses) {
+    int newScore = 0;
+    for (Cactus c : cactuses){
+      if ( this.pos.x > c.pos.x + c.size.x){
+        newScore++;
+      }
+    }
+    score = newScore;
+    return newScore;
+  }
 }

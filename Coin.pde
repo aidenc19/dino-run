@@ -6,7 +6,7 @@ public class Coin {
   //constructor
   public Coin(float x, float y) {
   pos = new PVector(x,y);
-  speed = 4;
+  speed = 3;
   vel = new PVector(-speed,0);
 }
 

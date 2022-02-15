@@ -16,6 +16,7 @@ public void draw() {
  for (int i = 0; i < cactuses.length; i++){
   cactuses[i].show();
   cactuses[i].update();
+  player.dinoVsCactus(cactuses[i]);
  }
  for (int i = 0; i < coins.length; i++){
   coins[i].show();
@@ -25,6 +26,13 @@ public void draw() {
  player.update();
 
  //a.c. show and update coins
+ drawScore();
+}
+
+private void drawScore() {
+  player.updateScore(cactuses);
+  textSize(48);
+  text(player.score, 20, 40);
 }
 private void spawnCoins() {
  for (int i = 0; i < coins.length; i++){
