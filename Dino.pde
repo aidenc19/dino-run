@@ -1,15 +1,15 @@
 public class Dino {
   private PVector pos, vel, size;
   private int hp, speed, jumpSpeed, score;
-  private final float gravity = 0.2;
+  private final float gravity = 0.4;
   private boolean inAir = false;
   
   //constructor
   public Dino() {
   pos = new PVector(50,300);
-  speed = 8;
+  speed = 10;
   vel = new PVector(0,0);
-  jumpSpeed = -8;
+  jumpSpeed = -10;
   hp = 3;
   score = 0;
   size = new PVector(30,50);

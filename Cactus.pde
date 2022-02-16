@@ -5,7 +5,7 @@ public class Cactus {
   //constructor
   public Cactus(float x, float y) {
   pos = new PVector(x,y);
-  speed = 3;
+  speed = 4;
   vel = new PVector(-speed,0);
   size = new PVector(20,40);
 }
